@@ -8,4 +8,4 @@ This tool is designed for post-exploitation of open Android Debug Bridge (ADB) p
 - Make sure you have ADB utility installed in your linux system.
 - Get the binary from the release section of this repository.
 - Give it executable permission with `chmod +x androxsploit_run`
-- Now you can run the binary with `./androxsploit_run` as usual. Enjoy!
+- Now you can run the binary with `./androxsploit` as usual. Enjoy!
