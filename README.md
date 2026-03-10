@@ -1,19 +1,47 @@
 # AndroXploit - exploit open ADB ports
 
-## About the tool
-This tool is designed for post-exploitation of open Android Debug Bridge (ADB) ports - inspired by the "Ghost framework". The tool is still under development and may introduce new functionalities in future. Stay updated with this repo to get it sooner.
+```code
+           .            .           
+            \          /                                                                                            
+         ____\________/____                                                                                         
+        /                  \                                                                                        
+       /    ██        ██    \                                                                                       
+      |     ██        ██     |                                                                                      
+      |         ____         |                                                                                      
+      |______________________|                                                                                      
+    _              _         __  __      _       _ _   
+   / \   _ __   __| |_ __ ___\ \/ /_ __ | | ___ (_) |_ 
+  / _ \ | '_ \ / _` | '__/ _ \\  /| '_ \| |/ _ \| | __|
+ / ___ \| | | | (_| | | | (_) /  \| |_) | | (_) | | |_ 
+/_/   \_\_| |_|\__,_|_|  \___/_/\_\ .__/|_|\___/|_|\__|
+                                  |_|                  
+A project by MR_Prey3r - for exploiting open ADB
+https://github.com/MR-Prey3r/androxploit 
+```
 
 
-## Installation
+## DESCRIPTION
+AndroXploit is a lightweight yet powerful shell-based framework for interacting with Android devices via ADB. Inspired by the Ghost Framework, this tool streamlines reconnaissance, activity tracking, and device manipulation into a single, automated interface.
+
+Designed for security researchers and developers who need a "surgical" approach for post-exploitation of open Android Debug Bridge (ADB) ports. Helpful for penetration testing as well as android debugging. The idea is inspired by - Metasploit & "Ghost framework". The tool is still under development and may introduce new functionalities in future. Stay updated with this repo to get it sooner. If you encounter any issue with the tool, feel free to initiate an issue on this repository.
+
+
+## 🔥 KEY FEATURES
+- Deep Recon: Extract a whole bunch of system information to get advantage in the attackflow.
+- Activity/Package Filtering: View "Standard" user apps & their activities while ignoring system noise.
+- Direct remote shell access to the device
+- Made easier execution for longer ADB commands & filtering annoying noisy output
+- *More features to come!*
+
+## INSTALLATION
 - Make sure you have ADB utility installed in your linux system.
 - Get the binary from the release section of this repository.
 - Give it executable permission with `chmod +x androxsploit`
 - Now you can run the binary with `./androxsploit` as usual. Enjoy!
 
 
-### Available commands:
+### USAGE / Available commands:
 ```code
-
 Commands:
 -------------------- 
 [+] help - displays the help
@@ -31,12 +59,14 @@ Information gathering commands:
 [+] getbat - shows the battery information
 [+] accounts - extracts the accounts associated with the target device
 [+] contacts - extracts phone contacts if available
-[+] connected_wifi - shows the connected wifi SSID
+[+] connected_wifi - shows the currently connected wifi SSID
+[+] getall_wifi - shows all the network(wifi/hostpot) SSID the device was ever connected to
 [+] getinfo - shows the device model
 [+] printenv - extracts the environment variables
 [+] isroot - checks if the device is rooted.
 [+] imginfo - shows information of all the image in the target device
-[+] lockstat - checks if the screen is currently locked or not
+[+] lockstatus - checks if the screen is currently locked or not
+[+] focused - shows the package name & its activity currently the device has on the screen
 
 Active user interaction commands:
 ---------
@@ -44,11 +74,13 @@ Active user interaction commands:
 [+] pin - tries to unlock the screen using given PIN [if PIN locked]
 [+] launch - extracts & starts the main activity of a given package [basically launches the app]
 [+] clrecent - clears out all the running applications in "Recents" tab & exitting the currently open app as well. You can ignore the errors it throws when trying to remove non-standars stacks.
+[+] tap - taps/clicks on the given Y, X coordinates. [Usage: tap Y X]
 
 File handling commands:
 ---------
-[+] lsxpacks - list all the third party apps installed
-[+] lspacks - list all the packages
+[+] lsxapk - lists all the third party apps installed. Pass "save" argument to save the list in a file [Example: lsxapk save]
+[+] lsapk - lists all the apps including system apps. Pass "save" argument to save the list in a file [Example: lsapk save]
+[+] activities - lists all the activities of all packages
 [+] pull - download files or directories from the device into your local system
 [+] push - upload files to the target device from your local system
 [+] install - upload files to the target device from your local system [use -g to grant all runtime perms automatically]
@@ -57,3 +89,19 @@ File handling commands:
 
 
 ```
+
+## ⚠️ DISCLAIMER
+This tool is solely for educational and authorized security testing purposes only. The author is not responsible for any misuse or damage caused by this script. Be responsible, stay sharp, smart & ethical!
+
+
+
+## ⚖️ LICENSE & CREDITS
+
+This project is licensed under the MIT License.
+
+Original Author: MR_Prey3r
+
+Inspiration: Inspired by the legendary Metasploit & Ghost Framework.
+
+Note: If you modify or improve this script, inspiring credit is appreciated! (This shell script might go open-source in future)
+
