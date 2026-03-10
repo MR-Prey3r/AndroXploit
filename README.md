@@ -35,7 +35,7 @@ Designed for security researchers and developers who need a "surgical" approach 
 
 ## INSTALLATION
 - Make sure you have ADB utility installed in your linux system.
-- Get the binary from the release section of this repository.
+- Get the binary from the [release](https://github.com/MR-Prey3r/AndroXploit/releases) section of this repository.
 - Give it executable permission with `chmod +x androxsploit`
 - Now you can run the binary with `./androxsploit` as usual. Enjoy!
 
@@ -54,7 +54,7 @@ Commands:
 [+] getsh - opens you a shell on the target device
 [+] clrsh - tries clearing the history of executed commands in the shell of the target device
 
-Information gathering commands:
+Deep recon commands:
 ---------
 [+] getbat - shows the battery information
 [+] accounts - extracts the accounts associated with the target device
@@ -67,6 +67,11 @@ Information gathering commands:
 [+] imginfo - shows information of all the image in the target device
 [+] lockstatus - checks if the screen is currently locked or not
 [+] focused - shows the package name & its activity currently the device has on the screen
+[+] custom_words - shows the custom words the user has typed (often contains names, slang, or partial passwords).
+[+] keycodes - lists all the available keycodes/keyevents in the device
+[+] wireshark - opens device tcpdump network logs in wireshark for better monitoring (may require root access)
+[+] readclipboard - reads the clipboard data if available (may require root access)
+[+] screenrecord - records screen & pulls the record data into your local machine (default time limit is set to maximum [60s]). If the screen's locked, you may get e blank file
 
 Active user interaction commands:
 ---------
@@ -75,6 +80,8 @@ Active user interaction commands:
 [+] launch - extracts & starts the main activity of a given package [basically launches the app]
 [+] clrecent - clears out all the running applications in "Recents" tab & exitting the currently open app as well. You can ignore the errors it throws when trying to remove non-standars stacks.
 [+] tap - taps/clicks on the given Y, X coordinates. [Usage: tap Y X]
+[+] openurl - opens a given url
+[+] setmediavol - sets media volume to the given value (min:0, max: 15)
 
 File handling commands:
 ---------
@@ -86,7 +93,6 @@ File handling commands:
 [+] install - upload files to the target device from your local system [use -g to grant all runtime perms automatically]
 [+] filestruct - prints the file-system structure under /sdcard
 [+] locate - extracts the geolocation of the device if enabled
-
 
 ```
 
